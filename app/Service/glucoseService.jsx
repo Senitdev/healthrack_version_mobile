@@ -1,8 +1,10 @@
 // src/Service/fetchDataGlucose.js (par exemple)
 
-import { getToken } from '../Service/authService';
+import { getToken, getUsername } from '../Service/authService';
+import { API_BASE_URL } from './apiUrl';
 export const fetchDataGlucose = async () => {
-  const username = 'groupesysteme01@gmail.com';
+  const username =getUsername()
+  console.log("glucose",username)
   try {
     // 🔐 Récupération du token
     const token = await getToken();
@@ -11,7 +13,7 @@ export const fetchDataGlucose = async () => {
       return [];
     }
     // 🌐 Appel API avec le token JWT
-    const response = await fetch("http://localhost:9090/glucose/groupesysteme01", {
+    const response = await fetch(`${API_BASE_URL}/${username}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

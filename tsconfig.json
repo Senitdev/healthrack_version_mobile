@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "components/charts/GlucoseChart.jsx", "components/charts/WeightChart.jsx", "components/charts/PressureChart.jsx"  ]
+, "components/charts/GlucoseChart.jsx", "components/charts/WeightChart.jsx", "components/charts/PressureChart.jsx", "app/Service/apiUrl.js"  ]
 }
